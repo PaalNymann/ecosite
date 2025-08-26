@@ -190,30 +190,25 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="mb-6"
           >
-            <div className="mb-6 mt-4 flex justify-center items-center gap-4 relative">
-              <Logo size="hero" />
-              
-              {/* Animated Grapplers - simple side-by-side positioning */}
-              <motion.div
-                initial={{ x: 100, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ duration: 1.2, delay: 1.5, type: "spring", stiffness: 100 }}
-                className="flex-shrink-0"
-              >
+            <div className="mb-6 mt-4 relative flex justify-center">
+              <div className="relative inline-block">
+                <Logo size="hero" />
+                
+                {/* Grapplers - ABSOLUTE positioning relative to logo container */}
                 <motion.img
                   src="/Grapplers.png"
                   alt="BJJ Grapplers"
-                  className="h-10 w-auto sm:h-12 md:h-20 lg:h-24 xl:h-32"
-                  animate={{ 
-                    rotate: [-2, 2, -2] 
-                  }}
-                  transition={{ 
-                    duration: 3, 
-                    repeat: Infinity, 
-                    ease: "easeInOut" 
+                  initial={{ x: 300, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 1.5, delay: 2, type: "spring", stiffness: 60 }}
+                  className="absolute h-12 w-auto sm:h-16 md:h-24 lg:h-28 xl:h-36"
+                  style={{
+                    top: '60%',
+                    left: '85%',
+                    transform: 'translate(-50%, -50%)'
                   }}
                 />
-              </motion.div>
+              </div>
             </div>
             <h1 className="font-black text-2xl sm:text-3xl md:text-6xl lg:text-7xl mb-4 gradient-text tracking-wide px-2">
               The Smarter Way to Learn BJJ
