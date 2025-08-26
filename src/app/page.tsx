@@ -318,7 +318,7 @@ export default function Home() {
             </div>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-4 md:gap-8">
+          <div className="grid md:grid-cols-3 gap-4 md:gap-8 mt-16 md:mt-20">
             {pricingPlans.map((plan, index) => (
               <motion.div
                 key={index}

@@ -2,13 +2,14 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Upload, Video, FileText, Users, BarChart3, Settings, Plus, Edit, Trash2 } from 'lucide-react'
+import { Upload, Video, FileText, Users, BarChart3, Settings, Plus, Edit, Trash2, Menu, X } from 'lucide-react'
 import VideoUpload from '@/components/VideoUpload'
 import Logo from '@/components/Logo'
 
 export default function AdminDashboard() {
   const [activeTab, setActiveTab] = useState('videos')
   const [showVideoUpload, setShowVideoUpload] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [videos, setVideos] = useState([
     { id: 1, title: 'Advanced Guard Techniques', duration: '12:45', status: 'Published', views: 1234 },
     { id: 2, title: 'Fundamental Positions', duration: '8:32', status: 'Draft', views: 0 },
@@ -62,7 +63,8 @@ export default function AdminDashboard() {
                 ◊ ADMIN CONSOLE ◊
               </motion.div>
             </div>
-            <div className="flex items-center gap-4">
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center gap-4">
               <div className="font-retro text-accent-lime text-sm tracking-widest">
                 {'>>> SYSTEM STATUS: ONLINE <<<'}
               </div>
@@ -70,8 +72,68 @@ export default function AdminDashboard() {
                 {'>> LOGOUT <<'}
               </button>
             </div>
+
+            {/* Mobile Hamburger Menu */}
+            <div className="md:hidden">
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="text-white hover:text-accent-neon transition-colors p-2"
+                aria-label="Toggle menu"
+              >
+                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+            </div>
           </div>
         </div>
+
+        {/* Mobile Menu Drawer */}
+        <AnimatePresence>
+          {isMenuOpen && (
+            <>
+              {/* Backdrop */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="fixed inset-0 bg-black/50 z-40 md:hidden"
+                onClick={() => setIsMenuOpen(false)}
+              />
+              
+              {/* Menu Drawer */}
+              <motion.div
+                initial={{ x: '100%' }}
+                animate={{ x: 0 }}
+                exit={{ x: '100%' }}
+                transition={{ type: 'tween', duration: 0.3 }}
+                className="fixed top-0 right-0 h-full w-80 bg-retro-dark border-l border-accent-neon/30 z-50 md:hidden"
+              >
+                <div className="p-6">
+                  <div className="flex items-center justify-between mb-8">
+                    <Logo size="sm" />
+                    <button
+                      onClick={() => setIsMenuOpen(false)}
+                      className="text-white hover:text-accent-neon transition-colors p-2"
+                    >
+                      <X size={24} />
+                    </button>
+                  </div>
+                  
+                  <nav className="space-y-6">
+                    <div className="font-retro text-accent-lime text-sm tracking-widest mb-4">
+                      {'>>> SYSTEM STATUS: ONLINE <<<'}
+                    </div>
+                    <button 
+                      className="w-full retro-button text-black px-4 py-2 font-retro font-bold tracking-wider text-center"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {'>> LOGOUT <<'}
+                    </button>
+                  </nav>
+                </div>
+              </motion.div>
+            </>
+          )}
+        </AnimatePresence>
       </header>
 
       <div className="max-w-7xl mx-auto px-6 py-8">

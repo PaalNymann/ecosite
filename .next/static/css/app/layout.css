@@ -1016,6 +1016,9 @@ video {
 .mt-6 {
   margin-top: 1.5rem;
 }
+.mt-16 {
+  margin-top: 4rem;
+}
 .line-clamp-2 {
   overflow: hidden;
   display: -webkit-box;
@@ -1135,6 +1138,9 @@ video {
 }
 .w-64 {
   width: 16rem;
+}
+.w-80 {
+  width: 20rem;
 }
 .min-w-0 {
   min-width: 0px;
@@ -1351,6 +1357,9 @@ video {
 .border-t-2 {
   border-top-width: 2px;
 }
+.border-l {
+  border-left-width: 1px;
+}
 .border-dashed {
   border-style: dashed;
 }
@@ -1461,6 +1470,9 @@ video {
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
+}
+.bg-black\/50 {
+  background-color: rgb(0 0 0 / 0.5);
 }
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
@@ -2106,6 +2118,10 @@ p, span, div, button, input, textarea, select {
   --tw-text-opacity: 1;
   color: rgb(163 230 53 / var(--tw-text-opacity, 1));
 }
+.hover\:text-accent-neon:hover {
+  --tw-text-opacity: 1;
+  color: rgb(255 0 255 / var(--tw-text-opacity, 1));
+}
 .hover\:shadow-purple-500\/25:hover {
   --tw-shadow-color: rgb(168 85 247 / 0.25);
   --tw-shadow: var(--tw-shadow-colored);
@@ -2201,6 +2217,10 @@ p, span, div, button, input, textarea, select {
 
   .md\:mt-6 {
     margin-top: 1.5rem;
+  }
+
+  .md\:mt-20 {
+    margin-top: 5rem;
   }
 
   .md\:block {

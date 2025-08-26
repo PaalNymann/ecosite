@@ -1,14 +1,15 @@
 'use client'
 
 import { useState } from 'react'
-import { motion } from 'framer-motion'
-import { User, Mail, Lock, Eye, EyeOff, Zap, Trophy, BookOpen, Clock, Star, ArrowRight } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { User, Mail, Lock, Eye, EyeOff, Zap, Trophy, BookOpen, Clock, Star, ArrowRight, Menu, X } from 'lucide-react'
 import Link from 'next/link'
 import Logo from '@/components/Logo'
 
 export default function MembersPage() {
   const [isLogin, setIsLogin] = useState(true)
   const [showPassword, setShowPassword] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -98,8 +99,9 @@ export default function MembersPage() {
                 Member Portal
               </motion.div>
             </div>
+            {/* Desktop Navigation */}
             <motion.div 
-              className="flex items-center space-x-8"
+              className="hidden md:flex items-center space-x-8"
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -114,8 +116,80 @@ export default function MembersPage() {
                 Back to Dojo
               </Link>
             </motion.div>
+
+            {/* Mobile Hamburger Menu */}
+            <div className="md:hidden">
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="text-white hover:text-accent-neon transition-colors p-2"
+                aria-label="Toggle menu"
+              >
+                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+            </div>
           </div>
         </div>
+
+        {/* Mobile Menu Drawer */}
+        <AnimatePresence>
+          {isMenuOpen && (
+            <>
+              {/* Backdrop */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="fixed inset-0 bg-black/50 z-40 md:hidden"
+                onClick={() => setIsMenuOpen(false)}
+              />
+              
+              {/* Menu Drawer */}
+              <motion.div
+                initial={{ x: '100%' }}
+                animate={{ x: 0 }}
+                exit={{ x: '100%' }}
+                transition={{ type: 'tween', duration: 0.3 }}
+                className="fixed top-0 right-0 h-full w-80 bg-retro-dark border-l border-accent-neon/30 z-50 md:hidden"
+              >
+                <div className="p-6">
+                  <div className="flex items-center justify-between mb-8">
+                    <Logo size="sm" />
+                    <button
+                      onClick={() => setIsMenuOpen(false)}
+                      className="text-white hover:text-accent-neon transition-colors p-2"
+                    >
+                      <X size={24} />
+                    </button>
+                  </div>
+                  
+                  <nav className="space-y-6">
+                    <Link 
+                      href="/lessons" 
+                      className="block text-white hover:text-accent-lime transition-colors font-retro tracking-wider text-lg"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      [LESSONS]
+                    </Link>
+                    <Link 
+                      href="/members" 
+                      className="block text-white hover:text-accent-lime transition-colors font-retro tracking-wider text-lg"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      [MEMBERS]
+                    </Link>
+                    <Link 
+                      href="/" 
+                      className="block retro-button text-white px-6 py-3 font-medium tracking-wide hover:scale-105 transition-all duration-300 modern-shadow text-center"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Back to Dojo
+                    </Link>
+                  </nav>
+                </div>
+              </motion.div>
+            </>
+          )}
+        </AnimatePresence>
       </header>
 
       <div className="max-w-7xl mx-auto px-6 py-12">
