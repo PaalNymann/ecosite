@@ -196,9 +196,9 @@ export default function Home() {
                   transition={{ duration: 1.2, delay: 1.5, type: "spring", stiffness: 100 }}
                   className="absolute"
                   style={{ 
-                    bottom: '50%', // Half the logo height up from bottom
-                    right: '-400%', // 4 times the logo width to the left (negative right = left)
-                    transform: 'translateY(50%)' // Center vertically at the 50% mark
+                    top: '50%', // Middle height of logo
+                    left: '100%', // Start at right edge of logo
+                    transform: 'translate(-80px, -50%)' // Move left 80px and center vertically
                   }}
                 >
                   <motion.img
