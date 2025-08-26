@@ -1,0 +1,202 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=block&v=2');
+
+/* Force immediate font loading */
+@font-face {
+  font-family: 'Press Start 2P Fallback';
+  src: url('https://fonts.gstatic.com/s/pressstart2p/v14/e3t4euO8T-267oIAQAu6jDQyK3nVivNm4I81.woff2') format('woff2');
+  font-display: block;
+}
+
+/* Dark Retro Gaming Design */
+:root {
+  --neon-purple: #b565f7;
+  --electric-cyan: #00ffff;
+  --lime-green: #ccff00;
+  --retro-orange: #ff6600;
+  --grid-pink: #ff0080;
+  --void-black: #050508;
+  --space-dark: #0a0a0f;
+  --deep-purple: #6a0dad;
+  --surface-dark: #1a1a2e;
+}
+
+/* CACHE BUST v3 - FORCE FONT CHANGE */
+body {
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(255, 0, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(204, 255, 0, 0.1) 0%, transparent 50%),
+    linear-gradient(135deg, var(--void-black) 0%, var(--space-dark) 50%, var(--deep-purple) 100%);
+  background-attachment: fixed;
+  color: white;
+  font-family: 'Press Start 2P', 'Press Start 2P Fallback', 'Courier New', monospace !important;
+  font-weight: normal;
+  overflow-x: hidden;
+  font-size: 12px;
+}
+
+/* AGGRESSIVE FONT OVERRIDE - CACHE BUST v3 */
+html, body, *, *::before, *::after {
+  font-family: 'Press Start 2P', 'Press Start 2P Fallback', 'Courier New', monospace !important;
+  font-weight: normal !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Press Start 2P', 'Press Start 2P Fallback', 'Courier New', monospace !important;
+  font-weight: normal !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  line-height: 1.4 !important;
+  font-size: 16px !important;
+}
+
+p, span, div, button, input, textarea, select {
+  font-family: 'Press Start 2P', 'Press Start 2P Fallback', 'Courier New', monospace !important;
+  font-weight: normal !important;
+  line-height: 1.6 !important;
+  font-size: 12px !important;
+}
+
+/* Static Grid Background */
+.retro-grid {
+  background-image: 
+    linear-gradient(rgba(255, 0, 128, 0.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 0, 128, 0.3) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Neon Glow Effects */
+.neon-glow {
+  filter: drop-shadow(0 0 10px currentColor) drop-shadow(0 0 20px currentColor);
+}
+
+.retro-shadow {
+  box-shadow: 
+    0 0 20px rgba(181, 101, 247, 0.5),
+    0 0 40px rgba(181, 101, 247, 0.3),
+    0 0 60px rgba(181, 101, 247, 0.1);
+}
+
+/* Retro Borders */
+.retro-border {
+  border: 2px solid;
+  border-image: linear-gradient(45deg, var(--neon-purple), var(--electric-cyan), var(--lime-green)) 1;
+  position: relative;
+}
+
+.retro-border::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, var(--neon-purple), var(--electric-cyan), var(--lime-green));
+  z-index: -1;
+  border-radius: inherit;
+  opacity: 0.3;
+  filter: blur(8px);
+}
+
+/* Retro Button */
+.retro-button {
+  background: linear-gradient(45deg, var(--neon-purple), var(--electric-cyan));
+  border: none;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.retro-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.retro-button:hover::before {
+  left: 100%;
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(45deg, var(--neon-purple), var(--electric-cyan), var(--lime-green));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Retro Typography */
+.font-display {
+  font-family: 'Orbitron', monospace;
+}
+
+.font-retro {
+  font-family: 'Courier Prime', monospace;
+}
+
+/* Subtle Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Pulse Animation */
+@keyframes neon-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.animate-neon-pulse {
+  animation: neon-pulse 2s ease-in-out infinite;
+}
+
+/* Glow Animation */
+@keyframes retro-glow {
+  0%, 100% { 
+    filter: drop-shadow(0 0 4px rgba(139, 92, 246, 0.3));
+  }
+  50% { 
+    filter: drop-shadow(0 0 12px rgba(139, 92, 246, 0.5));
+  }
+}
+
+.animate-retro-glow {
+  animation: retro-glow 3s ease-in-out infinite;
+}
+
+/* Modern Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--darker);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, var(--primary-light), var(--accent-light));
+}
+
+/* Utility Classes */
+.neon-text { color: var(--neon-purple); }
+.cyan-text { color: var(--electric-cyan); }
+.retro-dark { background-color: var(--space-dark); }
+.retro-darker { background-color: var(--void-black); }
