@@ -106,9 +106,15 @@ export default function AdminDashboard() {
                 exit={{ x: '100%' }}
                 transition={{ type: 'tween', duration: 0.3 }}
                 className="fixed top-0 right-0 h-full w-80 border-l border-accent-neon/30 z-50 md:hidden shadow-2xl"
-                style={{ backgroundColor: '#000000', opacity: 1 }}
+                style={{ 
+                  backgroundColor: '#000000', 
+                  background: '#000000',
+                  opacity: 1,
+                  backdropFilter: 'none',
+                  WebkitBackdropFilter: 'none'
+                }}
               >
-                <div className="p-6">
+                <div className="p-6" style={{ backgroundColor: '#000000', background: '#000000' }}>
                   <div className="flex items-center justify-between mb-8">
                     <Logo size="sm" />
                     <button
