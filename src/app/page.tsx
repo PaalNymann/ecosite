@@ -116,7 +116,7 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative px-6 py-8 max-w-7xl mx-auto">
+      <section className="relative px-4 md:px-6 py-6 md:py-8 max-w-7xl mx-auto">
         <div className="text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -127,12 +127,12 @@ export default function Home() {
             <div className="mb-6 mt-4 flex justify-center relative">
               <Logo size="hero" className="mx-auto" />
               
-              {/* Animated Grapplers - slides in to exact position from "Jiu Jitsu (5)" logo */}
+              {/* Animated Grapplers - slides in to exact position from "Jiu Jitsu (5)" logo - Hidden on mobile */}
               <motion.div
                 initial={{ x: 200, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 1.5, delay: 2.0, type: "spring", stiffness: 80 }}
-                className="absolute transform"
+                className="absolute transform hidden md:block"
                 style={{ 
                   right: '32%', // Position to the right of the "t" in "Quest" (not on top)
                   top: '52%', // Moved down 2% to align with bottom of logo text
@@ -155,11 +155,11 @@ export default function Home() {
                 />
               </motion.div>
             </div>
-            <h1 className="font-black text-4xl md:text-6xl lg:text-7xl mb-4 gradient-text tracking-wide">
+            <h1 className="font-black text-2xl sm:text-3xl md:text-6xl lg:text-7xl mb-4 gradient-text tracking-wide px-2">
               The Smarter Way to Learn BJJ
             </h1>
-            <div className="p-4 max-w-4xl mx-auto bg-gray-900/60 backdrop-blur-sm mb-6 rounded-lg border border-gray-700">
-              <p className="text-lg text-white font-semibold leading-relaxed tracking-wide">
+            <div className="p-3 md:p-4 max-w-4xl mx-auto bg-gray-900/60 backdrop-blur-sm mb-6 rounded-lg border border-gray-700 mx-2">
+              <p className="text-sm md:text-lg text-white font-semibold leading-relaxed tracking-wide">
                 Master jiu-jitsu with constraint-led games. A proven method used by elite coaches to build real skills faster and deeper.
               </p>
             </div>
@@ -173,7 +173,7 @@ export default function Home() {
             className="text-center mb-6"
           >
             <Link href="/members">
-              <button className="bg-gradient-to-r from-purple-600 to-cyan-500 text-white px-8 py-4 font-black tracking-wider hover:scale-105 transition-all duration-300 rounded-lg shadow-lg hover:shadow-purple-500/25">
+              <button className="bg-gradient-to-r from-purple-600 to-cyan-500 text-white px-6 md:px-8 py-3 md:py-4 font-black tracking-wider hover:scale-105 transition-all duration-300 rounded-lg shadow-lg hover:shadow-purple-500/25 text-sm md:text-base">
                 Player 1 start games
               </button>
             </Link>
@@ -186,7 +186,7 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="mb-8"
           >
-            <div className="bg-gray-900/60 backdrop-blur-sm p-4 max-w-4xl mx-auto rounded-lg border border-gray-700">
+            <div className="bg-gray-900/60 backdrop-blur-sm p-2 md:p-4 max-w-4xl mx-auto rounded-lg border border-gray-700 mx-2">
               <div className="aspect-video">
                 <iframe
                   src="https://www.youtube.com/embed/iW9SK77kNoA"
@@ -205,39 +205,39 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="px-6 py-16 max-w-7xl mx-auto">
+      <section className="px-4 md:px-6 py-8 md:py-16 max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="grid md:grid-cols-3 gap-8 mb-16"
+          className="grid md:grid-cols-3 gap-4 md:gap-8 mb-8 md:mb-16"
         >
-          <div className="bg-gray-900/60 backdrop-blur-sm p-6 text-center rounded-lg border border-gray-700">
-            <div className="text-accent-neon text-3xl mb-4">🥋</div>
-            <h3 className="font-display font-bold text-xl gradient-text mb-2">
+          <div className="bg-gray-900/60 backdrop-blur-sm p-4 md:p-6 text-center rounded-lg border border-gray-700">
+            <div className="text-accent-neon text-2xl md:text-3xl mb-4">🥋</div>
+            <h3 className="font-display font-bold text-lg md:text-xl gradient-text mb-2">
               FUNDAMENTALS
             </h3>
-            <p className="text-white/70 font-retro text-sm">
+            <p className="text-white/70 font-retro text-xs md:text-sm">
               Master the essential BJJ positions and movements
             </p>
           </div>
           
-          <div className="bg-gray-900/60 backdrop-blur-sm p-6 text-center rounded-lg border border-gray-700">
+          <div className="bg-gray-900/60 backdrop-blur-sm p-4 md:p-6 text-center rounded-lg border border-gray-700">
             <div className="text-accent-neon text-3xl mb-4">🏆</div>
-            <h3 className="font-display font-bold text-xl gradient-text mb-2">
+            <h3 className="font-display font-bold text-lg md:text-xl gradient-text mb-2">
               COMPETITION PREP
             </h3>
-            <p className="text-white/70 font-retro text-sm">
+            <p className="text-white/70 font-retro text-xs md:text-sm">
               Advanced techniques for tournament success
             </p>
           </div>
           
-          <div className="retro-border bg-retro-dark/50 backdrop-blur-sm p-6 text-center">
-            <div className="text-accent-neon text-3xl mb-4">🎯</div>
-            <h3 className="font-display font-bold text-xl gradient-text mb-2">
+          <div className="bg-gray-900/60 backdrop-blur-sm p-4 md:p-6 text-center rounded-lg border border-gray-700">
+            <div className="text-accent-neon text-2xl md:text-3xl mb-4">🎯</div>
+            <h3 className="font-display font-bold text-lg md:text-xl gradient-text mb-2">
               SUBMISSIONS
             </h3>
-            <p className="text-white/70 font-retro text-sm">
+            <p className="text-white/70 font-retro text-xs md:text-sm">
               Learn effective finishing techniques and setups
             </p>
           </div>
@@ -245,29 +245,29 @@ export default function Home() {
       </section>
 
       {/* Pricing Section */}
-      <section className="px-6 py-20 bg-gradient-to-r from-retro-dark to-retro-purple relative overflow-hidden">
+      <section className="px-4 md:px-6 py-12 md:py-20 bg-gradient-to-r from-retro-dark to-retro-purple relative overflow-hidden">
         <div className="absolute inset-0 bg-retro-darker/50"></div>
         <div className="max-w-7xl mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            className="text-center mb-8 md:mb-16"
           >
-            <div className="font-retro text-accent-orange text-sm mb-4 tracking-widest">
+            <div className="font-retro text-accent-orange text-xs md:text-sm mb-4 tracking-widest px-2">
               {'>>> SUBSCRIPTION TIERS AVAILABLE <<<'}
             </div>
-            <h2 className="font-display font-bold text-5xl md:text-6xl mb-8 gradient-text tracking-wider">
+            <h2 className="font-display font-bold text-2xl sm:text-3xl md:text-5xl lg:text-6xl mb-6 md:mb-8 gradient-text tracking-wider px-2">
               ◊ CHOOSE YOUR LEVEL ◊
             </h2>
-            <div className="p-4 max-w-4xl mx-auto bg-gray-900/60 backdrop-blur-sm rounded-lg border border-gray-700">
-              <p className="text-lg text-white font-retro tracking-wide">
+            <div className="p-3 md:p-4 max-w-4xl mx-auto bg-gray-900/60 backdrop-blur-sm rounded-lg border border-gray-700 mx-2">
+              <p className="text-sm md:text-lg text-white font-retro tracking-wide">
                 {'>> SELECT YOUR GAMING PACKAGE AND START YOUR JOURNEY <<'}
               </p>
             </div>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-4 md:gap-8">
             {pricingPlans.map((plan, index) => (
               <motion.div
                 key={index}
@@ -277,38 +277,38 @@ export default function Home() {
                 className="relative"
               >
                 {plan.popular && (
-                  <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 z-20">
-                    <div className="bg-gradient-to-r from-accent-neon to-secondary-500 px-6 py-2 rounded-full">
-                      <span className="text-black font-retro font-bold text-sm tracking-wider">
+                  <div className="absolute -top-8 md:-top-10 left-1/2 transform -translate-x-1/2 z-20">
+                    <div className="bg-gradient-to-r from-accent-neon to-secondary-500 px-3 md:px-6 py-1 md:py-2 rounded-full">
+                      <span className="text-black font-retro font-bold text-xs md:text-sm tracking-wider">
                         {'>> MOST POPULAR <<'}
                       </span>
                     </div>
                   </div>
                 )}
                 <div className={`
-                  bg-gray-900/60 backdrop-blur-sm p-8 h-full rounded-lg border border-gray-700
+                  bg-gray-900/60 backdrop-blur-sm p-4 md:p-8 h-full rounded-lg border border-gray-700
                   hover:bg-retro-dark/70 transition-all duration-300
                   ${plan.popular ? 'retro-shadow scale-105' : ''}
                 `}>
-                  <div className="text-center mb-8">
-                    <h3 className={`font-retro font-bold text-2xl mb-4 tracking-wider ${plan.color}`}>
+                  <div className="text-center mb-6 md:mb-8">
+                    <h3 className={`font-retro font-bold text-lg md:text-2xl mb-3 md:mb-4 tracking-wider ${plan.color}`}>
                       {plan.name}
                     </h3>
-                    <div className="mb-6">
-                      <span className={`text-5xl font-display font-bold ${plan.color}`}>
+                    <div className="mb-4 md:mb-6">
+                      <span className={`text-3xl md:text-5xl font-display font-bold ${plan.color}`}>
                         {plan.price}
                       </span>
-                      <span className="text-white/60 font-retro text-lg">
+                      <span className="text-white/60 font-retro text-sm md:text-lg">
                         {plan.period}
                       </span>
                     </div>
                   </div>
                   
-                  <ul className="space-y-4 mb-8">
+                  <ul className="space-y-3 md:space-y-4 mb-6 md:mb-8">
                     {plan.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-start gap-3">
-                        <div className={`w-2 h-2 ${plan.color.replace('text-', 'bg-')} mt-2 neon-glow`}></div>
-                        <span className="text-white/80 font-retro text-sm tracking-wide">
+                      <li key={featureIndex} className="flex items-start gap-2 md:gap-3">
+                        <div className={`w-2 h-2 ${plan.color.replace('text-', 'bg-')} mt-1 md:mt-2 neon-glow`}></div>
+                        <span className="text-white/80 font-retro text-xs md:text-sm tracking-wide">
                           {feature}
                         </span>
                       </li>
@@ -317,7 +317,7 @@ export default function Home() {
 
                   <Link href="/members">
                     <button className={`
-                      w-full py-4 font-retro font-bold tracking-wider transition-all duration-300
+                      w-full py-3 md:py-4 font-retro font-bold tracking-wider transition-all duration-300 text-xs md:text-sm
                       ${plan.popular 
                         ? 'retro-button text-black hover:scale-105 retro-shadow' 
                         : 'bg-transparent text-white hover:bg-white/10 rounded-lg border border-gray-600'
@@ -334,7 +334,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="px-6 py-20 bg-gradient-to-r from-retro-purple to-retro-cyan border-t-2 border-accent-neon relative overflow-hidden">
+      <section className="px-4 md:px-6 py-12 md:py-20 bg-gradient-to-r from-retro-purple to-retro-cyan border-t-2 border-accent-neon relative overflow-hidden">
         <div className="absolute inset-0 bg-retro-dark/30"></div>
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <motion.div
@@ -342,20 +342,20 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="font-retro text-accent-lime text-sm mb-4 tracking-widest">
+            <div className="font-retro text-accent-lime text-xs md:text-sm mb-4 tracking-widest px-2">
               {'>>> NEURAL LINK ESTABLISHMENT PROTOCOL <<<'}
             </div>
-            <h2 className="font-display font-bold text-5xl md:text-6xl mb-8 gradient-text tracking-wider">
+            <h2 className="font-display font-bold text-2xl sm:text-3xl md:text-5xl lg:text-6xl mb-6 md:mb-8 gradient-text tracking-wider px-2">
               ◊ JACK INTO THE MATRIX ◊
             </h2>
-            <div className="p-6 mb-10 bg-gray-900/60 backdrop-blur-sm rounded-lg border border-gray-700">
-              <p className="text-xl text-white font-retro tracking-wide leading-relaxed">
+            <div className="p-4 md:p-6 mb-6 md:mb-10 bg-gray-900/60 backdrop-blur-sm rounded-lg border border-gray-700 mx-2">
+              <p className="text-sm md:text-xl text-white font-retro tracking-wide leading-relaxed">
                 {'>> CONNECT TO GLOBAL LEARNING GRID: 10,000+ NEURAL NODES ACTIVE <<'}
                 <br />
                 <span className="text-accent-lime">ECOLOGICAL GAME PROTOCOLS: FULLY OPERATIONAL</span>
               </p>
             </div>
-            <button className="bg-transparent text-secondary-500 px-12 py-5 text-xl font-bold tracking-wider hover:bg-secondary-500/10 transition-all duration-300 flex items-center gap-3 rounded-lg border border-secondary-500">
+            <button className="bg-transparent text-secondary-500 px-6 md:px-12 py-3 md:py-5 text-sm md:text-xl font-bold tracking-wider hover:bg-secondary-500/10 transition-all duration-300 flex items-center gap-2 md:gap-3 rounded-lg border border-secondary-500 mx-auto">
               {'>> INITIATE CONNECTION <<'}
             </button>
           </motion.div>
@@ -363,16 +363,16 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-retro-darker border-t-2 border-accent-neon text-white py-12 relative">
+      <footer className="bg-retro-darker border-t-2 border-accent-neon text-white py-8 md:py-12 relative">
         <div className="absolute inset-0 bg-gradient-to-r from-retro-purple/20 to-retro-cyan/20"></div>
-        <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
-          <div className="font-display font-bold text-3xl gradient-text mb-4 tracking-wider">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 text-center relative z-10">
+          <div className="font-display font-bold text-xl md:text-3xl gradient-text mb-3 md:mb-4 tracking-wider">
             Science-Backed. Game-Driven.
           </div>
-          <p className="text-white/80 text-lg leading-relaxed max-w-3xl mx-auto">
+          <p className="text-white/80 text-sm md:text-lg leading-relaxed max-w-3xl mx-auto px-2">
             Our Constraint-Led Approach uses games to teach real jiu-jitsu skills, faster. Train with the best coaches, anytime, anywhere.
           </p>
-          <div className="mt-6 text-accent-lime font-retro text-xs tracking-widest">
+          <div className="mt-4 md:mt-6 text-accent-lime font-retro text-xs tracking-widest">
             {'>>> JIU JITSU QUEST | ONLINE TRAINING PLATFORM <<<'}
           </div>
         </div>

@@ -10,7 +10,7 @@ export default function Logo({ size = 'md', className = '' }: LogoProps) {
     sm: 'h-6 w-auto',
     md: 'h-9 w-auto', 
     lg: 'h-12 w-auto',
-    hero: 'h-48 w-auto md:h-[15rem] lg:h-[18rem]'
+    hero: 'h-24 w-auto sm:h-32 md:h-48 lg:h-[15rem] xl:h-[18rem]'
   }
 
   const logoSizes = {
