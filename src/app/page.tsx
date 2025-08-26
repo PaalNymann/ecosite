@@ -212,7 +212,7 @@ export default function Home() {
                   className="absolute"
                   style={{
                     bottom: '10%',
-                    right: '8%',
+                    right: '35%',
                     transform: 'translateX(0%)'
                   }}
                 >
