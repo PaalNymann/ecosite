@@ -185,30 +185,35 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="mb-6"
           >
-            <div className="mb-6 mt-4 flex justify-center items-center gap-2 relative">
-              <Logo size="hero" />
-              
-              {/* Animated Grapplers - slides in and tilts next to logo */}
-              <motion.div
-                initial={{ x: 100, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ duration: 1.2, delay: 1.5, type: "spring", stiffness: 100 }}
-                className="flex-shrink-0"
-              >
-                <motion.img
-                  src="/Grapplers.png"
-                  alt="BJJ Grapplers"
-                  className="h-6 w-auto sm:h-8 md:h-12 lg:h-16 xl:h-20"
-                  animate={{ 
-                    rotate: [-2, 2, -2] 
+            <div className="mb-6 mt-4 flex justify-center relative">
+              <div className="relative">
+                <Logo size="hero" />
+                
+                {/* Animated Grapplers - positioned at bottom right of "Quest" */}
+                <motion.div
+                  initial={{ x: 150, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 1.2, delay: 1.5, type: "spring", stiffness: 100 }}
+                  className="absolute bottom-0 right-0"
+                  style={{ 
+                    transform: 'translate(10px, -5px)' // Fine-tune position: right and slightly up
                   }}
-                  transition={{ 
-                    duration: 3, 
-                    repeat: Infinity, 
-                    ease: "easeInOut" 
-                  }}
-                />
-              </motion.div>
+                >
+                  <motion.img
+                    src="/Grapplers.png"
+                    alt="BJJ Grapplers"
+                    className="h-8 w-auto sm:h-10 md:h-16 lg:h-20 xl:h-26"
+                    animate={{ 
+                      rotate: [-2, 2, -2] 
+                    }}
+                    transition={{ 
+                      duration: 3, 
+                      repeat: Infinity, 
+                      ease: "easeInOut" 
+                    }}
+                  />
+                </motion.div>
+              </div>
             </div>
             <h1 className="font-black text-2xl sm:text-3xl md:text-6xl lg:text-7xl mb-4 gradient-text tracking-wide px-2">
               The Smarter Way to Learn BJJ
