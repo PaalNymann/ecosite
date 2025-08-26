@@ -211,9 +211,9 @@ export default function Home() {
                   transition={{ duration: 1.5, delay: 2.0, type: "spring", stiffness: 60 }}
                   className="absolute"
                   style={{
-                    bottom: '10%',
-                    right: '35%',
-                    transform: 'translateX(0%)'
+                    bottom: '15%',
+                    left: '100%',
+                    transform: 'translateX(-10px)'
                   }}
                 >
                   <Image
