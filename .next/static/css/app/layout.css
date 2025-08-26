@@ -2184,6 +2184,10 @@ p, span, div, button, input, textarea, select {
     height: 5rem;
   }
 
+  .md\:h-12 {
+    height: 3rem;
+  }
+
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -2359,6 +2363,10 @@ p, span, div, button, input, textarea, select {
     height: 6rem;
   }
 
+  .lg\:h-16 {
+    height: 4rem;
+  }
+
   .lg\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -2389,6 +2397,10 @@ p, span, div, button, input, textarea, select {
 
   .xl\:h-28 {
     height: 7rem;
+  }
+
+  .xl\:h-20 {
+    height: 5rem;
   }
 }
 
