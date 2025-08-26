@@ -189,20 +189,22 @@ export default function Home() {
               <div className="relative">
                 <Logo size="hero" />
                 
-                {/* Animated Grapplers - positioned at bottom right of "Quest" */}
+                {/* Animated Grapplers - positioned next to "Quest" */}
                 <motion.div
                   initial={{ x: 150, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ duration: 1.2, delay: 1.5, type: "spring", stiffness: 100 }}
-                  className="absolute bottom-0 right-0"
+                  className="absolute"
                   style={{ 
-                    transform: 'translate(10px, -5px)' // Fine-tune position: right and slightly up
+                    bottom: '50%', // Half the logo height up from bottom
+                    right: '-400%', // 4 times the logo width to the left (negative right = left)
+                    transform: 'translateY(50%)' // Center vertically at the 50% mark
                   }}
                 >
                   <motion.img
                     src="/Grapplers.png"
                     alt="BJJ Grapplers"
-                    className="h-8 w-auto sm:h-10 md:h-16 lg:h-20 xl:h-26"
+                    className="h-10 w-auto sm:h-12 md:h-20 lg:h-24 xl:h-32"
                     animate={{ 
                       rotate: [-2, 2, -2] 
                     }}
