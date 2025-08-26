@@ -105,7 +105,8 @@ export default function AdminDashboard() {
                 animate={{ x: 0 }}
                 exit={{ x: '100%' }}
                 transition={{ type: 'tween', duration: 0.3 }}
-                className="fixed top-0 right-0 h-full w-80 bg-black border-l border-accent-neon/30 z-50 md:hidden shadow-2xl"
+                className="fixed top-0 right-0 h-full w-80 border-l border-accent-neon/30 z-50 md:hidden shadow-2xl"
+                style={{ backgroundColor: '#000000', opacity: 1 }}
               >
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-8">
