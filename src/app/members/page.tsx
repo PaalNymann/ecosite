@@ -40,8 +40,7 @@ export default function MembersPage() {
       features: [
         'Access to CLA Basics',
         '10 Practice Sessions',
-        'Community Forum',
-        'Mobile App Access'
+        'Community Forum'
       ],
       popular: false
     },

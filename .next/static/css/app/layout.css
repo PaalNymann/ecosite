@@ -954,6 +954,9 @@ video {
 .-top-12 {
   top: -3rem;
 }
+.-top-16 {
+  top: -4rem;
+}
 .z-10 {
   z-index: 10;
 }
@@ -1018,6 +1021,9 @@ video {
 }
 .mt-16 {
   margin-top: 4rem;
+}
+.mt-20 {
+  margin-top: 5rem;
 }
 .line-clamp-2 {
   overflow: hidden;
@@ -2152,6 +2158,10 @@ p, span, div, button, input, textarea, select {
 }
 @media (min-width: 640px) {
 
+  .sm\:-top-14 {
+    top: -3.5rem;
+  }
+
   .sm\:h-32 {
     height: 8rem;
   }
@@ -2191,6 +2201,10 @@ p, span, div, button, input, textarea, select {
     top: -3.5rem;
   }
 
+  .md\:-top-16 {
+    top: -4rem;
+  }
+
   .md\:mb-16 {
     margin-bottom: 4rem;
   }
@@ -2221,6 +2235,10 @@ p, span, div, button, input, textarea, select {
 
   .md\:mt-20 {
     margin-top: 5rem;
+  }
+
+  .md\:mt-24 {
+    margin-top: 6rem;
   }
 
   .md\:block {

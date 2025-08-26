@@ -46,7 +46,6 @@ export default function Home() {
       features: [
         "Access to 100+ basic lessons",
         "Community forum access",
-        "Mobile app included",
         "Progress tracking"
       ],
       color: "cyan-text",
@@ -318,7 +317,7 @@ export default function Home() {
             </div>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-4 md:gap-8 mt-16 md:mt-20">
+          <div className="grid md:grid-cols-3 gap-4 md:gap-8 mt-20 sm:mt-18 md:mt-24">
             {pricingPlans.map((plan, index) => (
               <motion.div
                 key={index}
@@ -328,7 +327,7 @@ export default function Home() {
                 className="relative"
               >
                 {plan.popular && (
-                  <div className="absolute -top-12 md:-top-14 left-1/2 transform -translate-x-1/2 z-20">
+                  <div className="absolute -top-16 sm:-top-14 md:-top-16 left-1/2 transform -translate-x-1/2 z-20">
                     <div className="bg-gradient-to-r from-accent-neon to-secondary-500 px-3 md:px-6 py-1 md:py-2 rounded-full">
                       <span className="text-black font-retro font-bold text-xs md:text-sm tracking-wider">
                         {'>> MOST POPULAR <<'}
