@@ -822,6 +822,12 @@ video {
 [hidden]:where(:not([hidden="until-found"])) {
   display: none;
 }
+.pointer-events-none {
+  pointer-events: none;
+}
+.pointer-events-auto {
+  pointer-events: auto;
+}
 .fixed {
   position: fixed;
 }
@@ -872,6 +878,18 @@ video {
 }
 .top-40 {
   top: 10rem;
+}
+.right-4 {
+  right: 1rem;
+}
+.right-0 {
+  right: 0px;
+}
+.-top-6 {
+  top: -1.5rem;
+}
+.-top-10 {
+  top: -2.5rem;
 }
 .z-10 {
   z-index: 10;
@@ -991,6 +1009,15 @@ video {
 .h-9 {
   height: 2.25rem;
 }
+.h-32 {
+  height: 8rem;
+}
+.h-24 {
+  height: 6rem;
+}
+.h-14 {
+  height: 3.5rem;
+}
 .max-h-\[90vh\] {
   max-height: 90vh;
 }
@@ -1057,6 +1084,10 @@ video {
 }
 .-translate-y-1\/2 {
   --tw-translate-y: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.translate-x-4 {
+  --tw-translate-x: 1rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 .rotate-45 {
@@ -1638,6 +1669,11 @@ video {
   --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
+.shadow-2xl {
+  --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
 .shadow-accent-neon\/20 {
   --tw-shadow-color: rgb(255 0 255 / 0.2);
   --tw-shadow: var(--tw-shadow-colored);
@@ -1884,6 +1920,11 @@ p, span, div, button, input, textarea, select {
   --tw-scale-y: 1.05;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
+.hover\:scale-110:hover {
+  --tw-scale-x: 1.1;
+  --tw-scale-y: 1.1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
 .hover\:border-accent-neon\/50:hover {
   border-color: rgb(255 0 255 / 0.5);
 }
@@ -1924,6 +1965,10 @@ p, span, div, button, input, textarea, select {
   --tw-shadow-color: rgb(168 85 247 / 0.25);
   --tw-shadow: var(--tw-shadow-colored);
 }
+.hover\:shadow-purple-500\/50:hover {
+  --tw-shadow-color: rgb(168 85 247 / 0.5);
+  --tw-shadow: var(--tw-shadow-colored);
+}
 .focus\:border-accent-neon:focus {
   --tw-border-opacity: 1;
   border-color: rgb(255 0 255 / var(--tw-border-opacity, 1));
@@ -1956,6 +2001,14 @@ p, span, div, button, input, textarea, select {
 
   .md\:h-\[15rem\] {
     height: 15rem;
+  }
+
+  .md\:h-40 {
+    height: 10rem;
+  }
+
+  .md\:h-32 {
+    height: 8rem;
   }
 
   .md\:grid-cols-2 {
@@ -2001,6 +2054,18 @@ p, span, div, button, input, textarea, select {
 
   .lg\:h-\[18rem\] {
     height: 18rem;
+  }
+
+  .lg\:h-48 {
+    height: 12rem;
+  }
+
+  .lg\:h-40 {
+    height: 10rem;
+  }
+
+  .lg\:h-28 {
+    height: 7rem;
   }
 
   .lg\:grid-cols-2 {

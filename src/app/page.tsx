@@ -124,8 +124,36 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="mb-6"
           >
-            <div className="mb-6 mt-4 flex justify-center">
+            <div className="mb-6 mt-4 flex justify-center relative">
               <Logo size="hero" className="mx-auto" />
+              
+              {/* Animated Grapplers - slides in to exact position from "Jiu Jitsu (5)" logo */}
+              <motion.div
+                initial={{ x: 200, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 1.5, delay: 2.0, type: "spring", stiffness: 80 }}
+                className="absolute transform"
+                style={{ 
+                  right: '32%', // Position to the right of the "t" in "Quest" (not on top)
+                  top: '52%', // Moved down 2% to align with bottom of logo text
+                  transform: 'translateY(-50%)'
+                }}
+              >
+                <motion.img
+                  src="/Grapplers.png"
+                  alt="BJJ Grapplers"
+                  className="h-16 w-auto md:h-22 lg:h-28"
+                  animate={{ 
+                    rotate: [-3, 3, -3], 
+                    scale: [1, 1.02, 1] 
+                  }}
+                  transition={{ 
+                    duration: 2, 
+                    repeat: Infinity, 
+                    ease: "easeInOut" 
+                  }}
+                />
+              </motion.div>
             </div>
             <h1 className="font-black text-4xl md:text-6xl lg:text-7xl mb-4 gradient-text tracking-wide">
               The Smarter Way to Learn BJJ
@@ -135,6 +163,20 @@ export default function Home() {
                 Master jiu-jitsu with constraint-led games. A proven method used by elite coaches to build real skills faster and deeper.
               </p>
             </div>
+          </motion.div>
+
+          {/* Button Above Video */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="text-center mb-6"
+          >
+            <Link href="/members">
+              <button className="bg-gradient-to-r from-purple-600 to-cyan-500 text-white px-8 py-4 font-black tracking-wider hover:scale-105 transition-all duration-300 rounded-lg shadow-lg hover:shadow-purple-500/25">
+                Player 1 start games
+              </button>
+            </Link>
           </motion.div>
 
           {/* Video Section - Above the fold */}
@@ -156,19 +198,6 @@ export default function Home() {
                 ></iframe>
               </div>
             </div>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-center mt-4"
-            >
-              <Link href="/members">
-                <button className="bg-gradient-to-r from-purple-600 to-cyan-500 text-white px-8 py-4 font-black tracking-wider hover:scale-105 transition-all duration-300 rounded-lg shadow-lg hover:shadow-purple-500/25">
-                  Player 1 start games
-                </button>
-              </Link>
-            </motion.div>
           </motion.div>
 
 
@@ -248,7 +277,7 @@ export default function Home() {
                 className="relative"
               >
                 {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-20">
+                  <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 z-20">
                     <div className="bg-gradient-to-r from-accent-neon to-secondary-500 px-6 py-2 rounded-full">
                       <span className="text-black font-retro font-bold text-sm tracking-wider">
                         {'>> MOST POPULAR <<'}

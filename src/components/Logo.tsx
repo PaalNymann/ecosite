@@ -23,9 +23,9 @@ export default function Logo({ size = 'md', className = '' }: LogoProps) {
   return (
     <div className={`flex items-center ${className}`}>
       <div className="relative">
-        {/* Use the actual pixelated logo image */}
+        {/* Use main logo for hero, full logo for navigation */}
         <Image
-          src="/Jiu Jitsu (5).png"
+          src={size === 'hero' ? "/Jiu Jitsu main.png" : "/Jiu Jitsu (5).png"}
           alt="Jiu Jitsu Quest"
           width={logoSizes[size].width}
           height={logoSizes[size].height}
