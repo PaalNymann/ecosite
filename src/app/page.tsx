@@ -190,20 +190,19 @@ export default function Home() {
               
               {/* Animated Grapplers - slides in to exact position from "Jiu Jitsu (5)" logo */}
               <motion.div
-                initial={{ x: 300, opacity: 0 }}
+                initial={{ x: 200, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 1.5, delay: 2.0, type: "spring", stiffness: 80 }}
-                className="absolute"
+                className="absolute top-1/2 transform -translate-y-1/2"
                 style={{ 
-                  left: '65%', // Position from left for more consistent placement
-                  top: '50%',
-                  transform: 'translateY(-50%)'
+                  left: '100%', // Position relative to the logo's right edge
+                  marginLeft: '10px' // Small gap from logo
                 }}
               >
                 <motion.img
                   src="/Grapplers.png"
                   alt="BJJ Grapplers"
-                  className="h-8 w-auto sm:h-12 md:h-20 lg:h-24 xl:h-28"
+                  className="h-8 w-auto sm:h-10 md:h-16 lg:h-20 xl:h-24"
                   animate={{ 
                     rotate: [-3, 3, -3], 
                     scale: [1, 1.02, 1] 
@@ -266,15 +265,14 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="px-4 md:px-6 py-8 md:py-16 max-w-7xl mx-auto">
+      <section className="px-4 md:px-6 py-4 md:py-8 max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="grid md:grid-cols-3 gap-4 md:gap-8 mb-8 md:mb-16"
+          className="grid md:grid-cols-3 gap-4 md:gap-8 mb-4 md:mb-8"
         >
           <div className="bg-gray-900/60 backdrop-blur-sm p-4 md:p-6 text-center rounded-lg border border-gray-700">
-            <div className="text-accent-neon text-2xl md:text-3xl mb-4">🥋</div>
             <h3 className="font-display font-bold text-lg md:text-xl gradient-text mb-2">
               FUNDAMENTALS
             </h3>
@@ -284,7 +282,6 @@ export default function Home() {
           </div>
           
           <div className="bg-gray-900/60 backdrop-blur-sm p-4 md:p-6 text-center rounded-lg border border-gray-700">
-            <div className="text-accent-neon text-3xl mb-4">🏆</div>
             <h3 className="font-display font-bold text-lg md:text-xl gradient-text mb-2">
               COMPETITION PREP
             </h3>
@@ -294,7 +291,6 @@ export default function Home() {
           </div>
           
           <div className="bg-gray-900/60 backdrop-blur-sm p-4 md:p-6 text-center rounded-lg border border-gray-700">
-            <div className="text-accent-neon text-2xl md:text-3xl mb-4">🎯</div>
             <h3 className="font-display font-bold text-lg md:text-xl gradient-text mb-2">
               SUBMISSIONS
             </h3>

@@ -2090,6 +2090,10 @@ p, span, div, button, input, textarea, select {
     height: 3rem;
   }
 
+  .sm\:h-10 {
+    height: 2.5rem;
+  }
+
   .sm\:text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
