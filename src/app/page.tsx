@@ -191,43 +191,23 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="mb-6"
           >
-            <div className="mb-6 mt-4 relative flex justify-center">
-              <div className="relative inline-block">
-                {/* Use the FULL logo and mask/clip parts for perfect alignment */}
-                
-                {/* Static part - left portion of full logo */}
-                <div className="relative overflow-hidden" style={{ width: '75%', display: 'inline-block' }}>
-                  <Image
-                    src="/Jiu Jitsu (5).png"
-                    alt="Jiu Jitsu Quest - Left Part"
-                    width={900}
-                    height={288}
-                    className="h-24 w-auto sm:h-32 md:h-48 lg:h-[15rem] xl:h-[18rem] object-cover object-left"
-                    priority
-                  />
-                </div>
-                
-                {/* Animated part - right portion of full logo flies in */}
-                <motion.div
-                  initial={{ x: 300, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  transition={{ duration: 1.5, delay: 2.0, type: "spring", stiffness: 60 }}
-                  className="absolute top-0 left-0"
-                  style={{
-                    width: '100%',
-                    clipPath: 'inset(0 0 0 75%)', // Show only right 25% of the logo
-                    zIndex: 10
-                  }}
-                >
-                  <Image
-                    src="/Jiu Jitsu (5).png"
-                    alt="Jiu Jitsu Quest - Right Part"
-                    width={900}
-                    height={288}
-                    className="h-24 w-auto sm:h-32 md:h-48 lg:h-[15rem] xl:h-[18rem] object-cover object-left"
-                  />
-                </motion.div>
-              </div>
+            <div className="mb-6 mt-4 flex justify-center">
+              {/* Animated GIF logo flies in from right and loops */}
+              <motion.div
+                initial={{ x: 300, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 1.5, delay: 1.0, type: "spring", stiffness: 60 }}
+              >
+                <Image
+                  src="/Jiu Jitsu.gif"
+                  alt="Jiu Jitsu Quest"
+                  width={900}
+                  height={288}
+                  className="h-24 w-auto sm:h-32 md:h-48 lg:h-[15rem] xl:h-[18rem]"
+                  priority
+                  unoptimized
+                />
+              </motion.div>
             </div>
             <h1 className="font-black text-2xl sm:text-3xl md:text-6xl lg:text-7xl mb-4 gradient-text tracking-wide px-2">
               The Smarter Way to Learn BJJ
