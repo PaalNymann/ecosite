@@ -317,7 +317,7 @@ export default function Home() {
             </div>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-4 md:gap-8 mt-24 sm:mt-20 md:mt-28">
+          <div className="grid md:grid-cols-3 gap-4 md:gap-8 mt-8 md:mt-12">
             {pricingPlans.map((plan, index) => (
               <motion.div
                 key={index}
@@ -326,20 +326,20 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="relative"
               >
-                {plan.popular && (
-                  <div className="absolute -top-20 sm:-top-16 md:-top-18 left-1/2 transform -translate-x-1/2 z-20">
-                    <div className="bg-gradient-to-r from-accent-neon to-secondary-500 px-3 md:px-6 py-1 md:py-2 rounded-full">
-                      <span className="text-black font-retro font-bold text-xs md:text-sm tracking-wider">
-                        {'>> MOST POPULAR <<'}
-                      </span>
-                    </div>
-                  </div>
-                )}
                 <div className={`
                   bg-gray-900/60 backdrop-blur-sm p-4 md:p-8 h-full rounded-lg border border-gray-700
                   hover:bg-retro-dark/70 transition-all duration-300
                   ${plan.popular ? 'retro-shadow scale-105' : ''}
                 `}>
+                  {plan.popular && (
+                    <div className="text-center mb-4">
+                      <div className="inline-block bg-gradient-to-r from-accent-neon to-secondary-500 px-3 md:px-4 py-1 md:py-2 rounded-full">
+                        <span className="text-black font-retro font-bold text-xs md:text-sm tracking-wider">
+                          {'>> MOST POPULAR <<'}
+                        </span>
+                      </div>
+                    </div>
+                  )}
                   <div className="text-center mb-6 md:mb-8">
                     <h3 className={`font-retro font-bold text-lg md:text-2xl mb-3 md:mb-4 tracking-wider ${plan.color}`}>
                       {plan.name}

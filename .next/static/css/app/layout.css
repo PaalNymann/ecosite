@@ -1031,6 +1031,9 @@ video {
 .mt-24 {
   margin-top: 6rem;
 }
+.mt-8 {
+  margin-top: 2rem;
+}
 .line-clamp-2 {
   overflow: hidden;
   display: -webkit-box;
@@ -2259,6 +2262,10 @@ p, span, div, button, input, textarea, select {
     margin-top: 7rem;
   }
 
+  .md\:mt-12 {
+    margin-top: 3rem;
+  }
+
   .md\:block {
     display: block;
   }
@@ -2397,6 +2404,11 @@ p, span, div, button, input, textarea, select {
   .md\:py-5 {
     padding-top: 1.25rem;
     padding-bottom: 1.25rem;
+  }
+
+  .md\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .md\:text-4xl {
