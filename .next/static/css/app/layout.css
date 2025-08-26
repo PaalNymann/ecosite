@@ -1309,6 +1309,10 @@ video {
 .border-white\/30 {
   border-color: rgb(255 255 255 / 0.3);
 }
+.border-cyan-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(6 182 212 / var(--tw-border-opacity, 1));
+}
 .bg-accent-lime\/20 {
   background-color: rgb(204 255 0 / 0.2);
 }
@@ -1372,6 +1376,10 @@ video {
 }
 .bg-retro-dark\/95 {
   background-color: rgb(10 10 15 / 0.95);
+}
+.bg-gray-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1));
 }
 .bg-gradient-to-br {
   background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
@@ -1684,6 +1692,10 @@ video {
 .text-white\/80 {
   color: rgb(255 255 255 / 0.8);
 }
+.text-cyan-400 {
+  --tw-text-opacity: 1;
+  color: rgb(34 211 238 / var(--tw-text-opacity, 1));
+}
 .antialiased {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -1991,6 +2003,10 @@ p, span, div, button, input, textarea, select {
 .hover\:text-white\/60:hover {
   color: rgb(255 255 255 / 0.6);
 }
+.hover\:text-lime-400:hover {
+  --tw-text-opacity: 1;
+  color: rgb(163 230 53 / var(--tw-text-opacity, 1));
+}
 .hover\:shadow-purple-500\/25:hover {
   --tw-shadow-color: rgb(168 85 247 / 0.25);
   --tw-shadow: var(--tw-shadow-colored);
@@ -2023,6 +2039,10 @@ p, span, div, button, input, textarea, select {
 
   .sm\:h-32 {
     height: 8rem;
+  }
+
+  .sm\:h-8 {
+    height: 2rem;
   }
 
   .sm\:text-3xl {
@@ -2102,6 +2122,10 @@ p, span, div, button, input, textarea, select {
 
   .md\:h-48 {
     height: 12rem;
+  }
+
+  .md\:h-16 {
+    height: 4rem;
   }
 
   .md\:grid-cols-2 {
@@ -2271,6 +2295,10 @@ p, span, div, button, input, textarea, select {
     height: 15rem;
   }
 
+  .lg\:h-20 {
+    height: 5rem;
+  }
+
   .lg\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -2293,6 +2321,10 @@ p, span, div, button, input, textarea, select {
 
   .xl\:h-\[18rem\] {
     height: 18rem;
+  }
+
+  .xl\:h-24 {
+    height: 6rem;
   }
 }
 

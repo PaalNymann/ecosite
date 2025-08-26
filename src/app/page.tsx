@@ -133,7 +133,7 @@ export default function Home() {
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <motion.div
-            className="md:hidden absolute top-full left-0 right-0 bg-retro-dark/95 backdrop-blur-sm border-b-2 border-accent-neon z-50"
+            className="md:hidden absolute top-full left-0 right-0 bg-gray-900 backdrop-blur-sm border-b-2 border-cyan-500 z-50"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
@@ -142,14 +142,14 @@ export default function Home() {
             <div className="flex flex-col space-y-4 p-6">
               <Link 
                 href="/lessons" 
-                className="cyan-text hover:text-accent-lime transition-colors font-bold tracking-wider text-center py-2"
+                className="text-cyan-400 hover:text-lime-400 transition-colors font-bold tracking-wider text-center py-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 LESSONS
               </Link>
               <Link 
                 href="/members" 
-                className="cyan-text hover:text-accent-lime transition-colors font-bold tracking-wider text-center py-2"
+                className="text-cyan-400 hover:text-lime-400 transition-colors font-bold tracking-wider text-center py-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 MEMBERS
@@ -181,16 +181,17 @@ export default function Home() {
                 initial={{ x: 200, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 1.5, delay: 2.0, type: "spring", stiffness: 80 }}
-                className="absolute transform right-[25%] md:right-[32%]"
+                className="absolute transform"
                 style={{ 
-                  top: '52%', // Moved down 2% to align with bottom of logo text
+                  right: 'calc(50% - 120px)', // Fixed positioning relative to logo center
+                  top: '52%',
                   transform: 'translateY(-50%)'
                 }}
               >
                 <motion.img
                   src="/Grapplers.png"
                   alt="BJJ Grapplers"
-                  className="h-16 w-auto md:h-22 lg:h-28"
+                  className="h-6 w-auto sm:h-8 md:h-16 lg:h-20 xl:h-24"
                   animate={{ 
                     rotate: [-3, 3, -3], 
                     scale: [1, 1.02, 1] 
