@@ -206,14 +206,14 @@ export default function Home() {
                 {/* Grapplers part - flies in to complete the logo assembly */}
                 {/* Reference: Navigation uses "/Jiu Jitsu (5).png" which shows the complete logo */}
                 <motion.div
-                  initial={{ x: 300, opacity: 0 }}
+                  initial={{ x: 200, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ duration: 1.5, delay: 2.0, type: "spring", stiffness: 60 }}
                   className="absolute"
                   style={{
-                    bottom: '15%',
-                    left: '100%',
-                    transform: 'translateX(-10px)'
+                    bottom: '25%',
+                    right: '5%',
+                    transform: 'translateX(0px)'
                   }}
                 >
                   <Image
