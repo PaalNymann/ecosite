@@ -182,7 +182,7 @@ export default function LessonsPage() {
                 animate={{ x: 0 }}
                 exit={{ x: '100%' }}
                 transition={{ type: 'tween', duration: 0.3 }}
-                className="fixed top-0 right-0 h-full w-80 bg-gray-900 border-l border-accent-neon/30 z-50 md:hidden"
+                className="fixed top-0 right-0 h-full w-80 bg-black border-l border-accent-neon/30 z-50 md:hidden shadow-2xl"
               >
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-8">
