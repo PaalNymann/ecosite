@@ -328,7 +328,7 @@ export default function Home() {
                 className="relative"
               >
                 {plan.popular && (
-                  <div className="absolute -top-8 md:-top-10 left-1/2 transform -translate-x-1/2 z-20">
+                  <div className="absolute -top-12 md:-top-14 left-1/2 transform -translate-x-1/2 z-20">
                     <div className="bg-gradient-to-r from-accent-neon to-secondary-500 px-3 md:px-6 py-1 md:py-2 rounded-full">
                       <span className="text-black font-retro font-bold text-xs md:text-sm tracking-wider">
                         {'>> MOST POPULAR <<'}

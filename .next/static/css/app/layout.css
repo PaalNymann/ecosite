@@ -951,6 +951,9 @@ video {
 .bottom-0 {
   bottom: 0px;
 }
+.-top-12 {
+  top: -3rem;
+}
 .z-10 {
   z-index: 10;
 }
@@ -2166,6 +2169,10 @@ p, span, div, button, input, textarea, select {
 
   .md\:right-\[32\%\] {
     right: 32%;
+  }
+
+  .md\:-top-14 {
+    top: -3.5rem;
   }
 
   .md\:mb-16 {

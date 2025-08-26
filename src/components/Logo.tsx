@@ -9,14 +9,14 @@ export default function Logo({ size = 'md', className = '' }: LogoProps) {
   const sizeClasses = {
     sm: 'h-6 w-auto',
     md: 'h-9 w-auto', 
-    lg: 'h-12 w-auto',
+    lg: 'h-16 w-auto',
     hero: 'h-24 w-auto sm:h-32 md:h-48 lg:h-[15rem] xl:h-[18rem]'
   }
 
   const logoSizes = {
     sm: { width: 90, height: 24 },
     md: { width: 135, height: 36 },
-    lg: { width: 180, height: 48 },
+    lg: { width: 234, height: 64 },
     hero: { width: 900, height: 288 }
   }
 
