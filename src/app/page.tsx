@@ -130,39 +130,51 @@ export default function Home() {
           </motion.button>
         </nav>
 
-        {/* Mobile Menu */}
-        {mobileMenuOpen && (
-          <motion.div
-            className="md:hidden absolute top-full left-0 right-0 bg-gray-900 backdrop-blur-sm border-b-2 border-cyan-500 z-50"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3 }}
-          >
-            <div className="flex flex-col space-y-4 p-6">
-              <Link 
-                href="/lessons" 
-                className="text-cyan-400 hover:text-lime-400 transition-colors font-bold tracking-wider text-center py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                LESSONS
-              </Link>
-              <Link 
-                href="/members" 
-                className="text-cyan-400 hover:text-lime-400 transition-colors font-bold tracking-wider text-center py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                MEMBERS
-              </Link>
-              <Link href="/members" onClick={() => setMobileMenuOpen(false)}>
-                <button className="w-full bg-gradient-to-r from-purple-600 to-cyan-500 text-white px-6 py-3 font-bold tracking-wider hover:scale-105 transition-all duration-300 rounded-lg shadow-lg hover:shadow-purple-500/25">
-                  LOGIN
-                </button>
-              </Link>
-            </div>
-          </motion.div>
-        )}
       </header>
+
+      {/* Mobile Menu Overlay */}
+      <div className={`fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden transition-opacity duration-300 ${
+        mobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+      }`} onClick={() => setMobileMenuOpen(false)} />
+      
+      {/* Mobile Menu */}
+      <div className={`fixed top-0 right-0 h-full w-64 bg-gray-900 transform transition-transform duration-300 z-50 md:hidden ${
+        mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+      }`}>
+        <div className="flex flex-col h-full">
+          <div className="flex justify-between items-center p-4 border-b border-gray-700">
+            <span className="text-white font-bold">MENU</span>
+            <button 
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-white p-2"
+            >
+              <X size={24} />
+            </button>
+          </div>
+          <div className="flex flex-col space-y-6 p-6">
+            <Link 
+              href="/lessons" 
+              className="text-cyan-400 hover:text-lime-400 transition-colors font-bold tracking-wider text-left py-3 border-b border-gray-700"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              LESSONS
+            </Link>
+            <Link 
+              href="/members" 
+              className="text-cyan-400 hover:text-lime-400 transition-colors font-bold tracking-wider text-left py-3 border-b border-gray-700"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              MEMBERS
+            </Link>
+            <Link href="/members" onClick={() => setMobileMenuOpen(false)}>
+              <button className="w-full bg-gradient-to-r from-purple-600 to-cyan-500 text-white px-6 py-3 font-bold tracking-wider hover:scale-105 transition-all duration-300 rounded-lg shadow-lg hover:shadow-purple-500/25 mt-4">
+                LOGIN
+              </button>
+            </Link>
+          </div>
+        </div>
+      </div>
+
 
       {/* Hero Section */}
       <section className="relative px-4 md:px-6 py-6 md:py-8 max-w-7xl mx-auto">
@@ -178,20 +190,20 @@ export default function Home() {
               
               {/* Animated Grapplers - slides in to exact position from "Jiu Jitsu (5)" logo */}
               <motion.div
-                initial={{ x: 200, opacity: 0 }}
+                initial={{ x: 300, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 1.5, delay: 2.0, type: "spring", stiffness: 80 }}
-                className="absolute transform"
+                className="absolute"
                 style={{ 
-                  right: 'calc(50% - 120px)', // Fixed positioning relative to logo center
-                  top: '52%',
+                  left: '65%', // Position from left for more consistent placement
+                  top: '50%',
                   transform: 'translateY(-50%)'
                 }}
               >
                 <motion.img
                   src="/Grapplers.png"
                   alt="BJJ Grapplers"
-                  className="h-6 w-auto sm:h-8 md:h-16 lg:h-20 xl:h-24"
+                  className="h-8 w-auto sm:h-12 md:h-20 lg:h-24 xl:h-28"
                   animate={{ 
                     rotate: [-3, 3, -3], 
                     scale: [1, 1.02, 1] 
