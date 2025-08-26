@@ -193,35 +193,38 @@ export default function Home() {
           >
             <div className="mb-6 mt-4 relative flex justify-center">
               <div className="relative inline-block">
-                {/* Main logo text - "Jiu Jitsu Quest" */}
-                <Image
-                  src="/Jiu Jitsu main.png"
-                  alt="Jiu Jitsu Quest"
-                  width={900}
-                  height={288}
-                  className="h-24 w-auto sm:h-32 md:h-48 lg:h-[15rem] xl:h-[18rem] object-cover object-center"
-                  priority
-                />
+                {/* Use the FULL logo and mask/clip parts for perfect alignment */}
                 
-                {/* Grapplers part - flies in to complete the logo assembly */}
-                {/* Reference: Navigation uses "/Jiu Jitsu (5).png" which shows the complete logo */}
+                {/* Static part - left portion of full logo */}
+                <div className="relative overflow-hidden" style={{ width: '75%', display: 'inline-block' }}>
+                  <Image
+                    src="/Jiu Jitsu (5).png"
+                    alt="Jiu Jitsu Quest - Left Part"
+                    width={900}
+                    height={288}
+                    className="h-24 w-auto sm:h-32 md:h-48 lg:h-[15rem] xl:h-[18rem] object-cover object-left"
+                    priority
+                  />
+                </div>
+                
+                {/* Animated part - right portion of full logo flies in */}
                 <motion.div
-                  initial={{ x: 200, opacity: 0 }}
+                  initial={{ x: 300, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ duration: 1.5, delay: 2.0, type: "spring", stiffness: 60 }}
-                  className="absolute"
+                  className="absolute top-0 left-0"
                   style={{
-                    bottom: '25%',
-                    right: '5%',
-                    transform: 'translateX(0px)'
+                    width: '100%',
+                    clipPath: 'inset(0 0 0 75%)', // Show only right 25% of the logo
+                    zIndex: 10
                   }}
                 >
                   <Image
-                    src="/Grapplers.png"
-                    alt="BJJ Grapplers"
-                    width={150}
-                    height={75}
-                    className="h-8 w-auto sm:h-10 md:h-16 lg:h-20 xl:h-24"
+                    src="/Jiu Jitsu (5).png"
+                    alt="Jiu Jitsu Quest - Right Part"
+                    width={900}
+                    height={288}
+                    className="h-24 w-auto sm:h-32 md:h-48 lg:h-[15rem] xl:h-[18rem] object-cover object-left"
                   />
                 </motion.div>
               </div>
