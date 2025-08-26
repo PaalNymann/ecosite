@@ -83,6 +83,11 @@ export default function Home() {
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
+  // Close mobile menu when clicking outside
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false)
+  }
+
   return (
     <div className="min-h-screen relative">
       {/* Header */}
@@ -135,7 +140,7 @@ export default function Home() {
       {/* Mobile Menu Overlay */}
       <div className={`fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden transition-opacity duration-300 ${
         mobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
-      }`} onClick={() => setMobileMenuOpen(false)} />
+      }`} onClick={closeMobileMenu} />
       
       {/* Mobile Menu */}
       <div className={`fixed top-0 right-0 h-full w-64 bg-gray-900 transform transition-transform duration-300 z-50 md:hidden ${
@@ -185,37 +190,30 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="mb-6"
           >
-            <div className="mb-6 mt-4 flex justify-center relative">
-              <div className="relative">
-                <Logo size="hero" />
-                
-                {/* Animated Grapplers - positioned next to "Quest" */}
-                <motion.div
-                  initial={{ x: 150, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  transition={{ duration: 1.2, delay: 1.5, type: "spring", stiffness: 100 }}
-                  className="absolute"
-                  style={{ 
-                    top: '50%', // Middle height of logo
-                    left: '100%', // Start at right edge of logo
-                    transform: 'translate(-80px, -50%)' // Move left 80px and center vertically
+            <div className="mb-6 mt-4 flex justify-center items-center gap-4 relative">
+              <Logo size="hero" />
+              
+              {/* Animated Grapplers - simple side-by-side positioning */}
+              <motion.div
+                initial={{ x: 100, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 1.2, delay: 1.5, type: "spring", stiffness: 100 }}
+                className="flex-shrink-0"
+              >
+                <motion.img
+                  src="/Grapplers.png"
+                  alt="BJJ Grapplers"
+                  className="h-10 w-auto sm:h-12 md:h-20 lg:h-24 xl:h-32"
+                  animate={{ 
+                    rotate: [-2, 2, -2] 
                   }}
-                >
-                  <motion.img
-                    src="/Grapplers.png"
-                    alt="BJJ Grapplers"
-                    className="h-10 w-auto sm:h-12 md:h-20 lg:h-24 xl:h-32"
-                    animate={{ 
-                      rotate: [-2, 2, -2] 
-                    }}
-                    transition={{ 
-                      duration: 3, 
-                      repeat: Infinity, 
-                      ease: "easeInOut" 
-                    }}
-                  />
-                </motion.div>
-              </div>
+                  transition={{ 
+                    duration: 3, 
+                    repeat: Infinity, 
+                    ease: "easeInOut" 
+                  }}
+                />
+              </motion.div>
             </div>
             <h1 className="font-black text-2xl sm:text-3xl md:text-6xl lg:text-7xl mb-4 gradient-text tracking-wide px-2">
               The Smarter Way to Learn BJJ
