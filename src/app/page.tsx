@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import Logo from '@/components/Logo'
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
@@ -192,22 +193,37 @@ export default function Home() {
           >
             <div className="mb-6 mt-4 relative flex justify-center">
               <div className="relative inline-block">
-                <Logo size="hero" />
+                {/* Main logo text - "Jiu Jitsu Quest" */}
+                <Image
+                  src="/Jiu Jitsu main.png"
+                  alt="Jiu Jitsu Quest"
+                  width={900}
+                  height={288}
+                  className="h-24 w-auto sm:h-32 md:h-48 lg:h-[15rem] xl:h-[18rem] object-cover object-center"
+                  priority
+                />
                 
-                {/* Grapplers - ABSOLUTE positioning relative to logo container */}
-                <motion.img
-                  src="/Grapplers.png"
-                  alt="BJJ Grapplers"
+                {/* Grapplers part - flies in to complete the logo assembly */}
+                {/* Reference: Navigation uses "/Jiu Jitsu (5).png" which shows the complete logo */}
+                <motion.div
                   initial={{ x: 300, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
-                  transition={{ duration: 1.5, delay: 2, type: "spring", stiffness: 60 }}
-                  className="absolute h-12 w-auto sm:h-16 md:h-24 lg:h-28 xl:h-36"
+                  transition={{ duration: 1.5, delay: 2.0, type: "spring", stiffness: 60 }}
+                  className="absolute"
                   style={{
-                    top: '60%',
-                    left: '85%',
-                    transform: 'translate(-50%, -50%)'
+                    bottom: '10%',
+                    right: '8%',
+                    transform: 'translateX(0%)'
                   }}
-                />
+                >
+                  <Image
+                    src="/Grapplers.png"
+                    alt="BJJ Grapplers"
+                    width={150}
+                    height={75}
+                    className="h-8 w-auto sm:h-10 md:h-16 lg:h-20 xl:h-24"
+                  />
+                </motion.div>
               </div>
             </div>
             <h1 className="font-black text-2xl sm:text-3xl md:text-6xl lg:text-7xl mb-4 gradient-text tracking-wide px-2">
