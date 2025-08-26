@@ -1,10 +1,11 @@
 'use client'
 
-import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Play, Star, Zap, Grid3X3, Target, Users, CheckCircle2, Gamepad2, Crown, Rocket, Trophy } from 'lucide-react'
 import Link from 'next/link'
 import Logo from '@/components/Logo'
+import { useState } from 'react'
+import { Menu, X } from 'lucide-react'
+import { Play, Star, Zap, Grid3X3, Target, Users, CheckCircle2, Gamepad2, Crown, Rocket, Trophy } from 'lucide-react'
 
 export default function Home() {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null)
@@ -80,12 +81,14 @@ export default function Home() {
     }
   ]
 
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
   return (
     <div className="min-h-screen relative">
       {/* Header */}
       <header className="relative overflow-hidden border-b-2 border-accent-neon">
         <div className="absolute inset-0 bg-gradient-to-r from-retro-dark/40 to-retro-purple/40 backdrop-blur-sm"></div>
-        <nav className="relative z-10 flex items-center justify-between p-6 max-w-7xl mx-auto">
+        <nav className="relative z-10 flex items-center justify-between p-4 md:p-6 max-w-7xl mx-auto">
           <motion.div 
             className="cursor-pointer hover:scale-105 transition-transform"
             initial={{ opacity: 0, x: -20 }}
@@ -94,8 +97,10 @@ export default function Home() {
           >
             <Logo size="lg" />
           </motion.div>
+          
+          {/* Desktop Navigation */}
           <motion.div 
-            className="flex items-center space-x-8"
+            className="hidden md:flex items-center space-x-8"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -112,7 +117,51 @@ export default function Home() {
               </button>
             </Link>
           </motion.div>
+
+          {/* Mobile Hamburger Button */}
+          <motion.button
+            className="md:hidden text-white p-2"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </motion.button>
         </nav>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <motion.div
+            className="md:hidden absolute top-full left-0 right-0 bg-retro-dark/95 backdrop-blur-sm border-b-2 border-accent-neon z-50"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+          >
+            <div className="flex flex-col space-y-4 p-6">
+              <Link 
+                href="/lessons" 
+                className="cyan-text hover:text-accent-lime transition-colors font-bold tracking-wider text-center py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                LESSONS
+              </Link>
+              <Link 
+                href="/members" 
+                className="cyan-text hover:text-accent-lime transition-colors font-bold tracking-wider text-center py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                MEMBERS
+              </Link>
+              <Link href="/members" onClick={() => setMobileMenuOpen(false)}>
+                <button className="w-full bg-gradient-to-r from-purple-600 to-cyan-500 text-white px-6 py-3 font-bold tracking-wider hover:scale-105 transition-all duration-300 rounded-lg shadow-lg hover:shadow-purple-500/25">
+                  LOGIN
+                </button>
+              </Link>
+            </div>
+          </motion.div>
+        )}
       </header>
 
       {/* Hero Section */}
@@ -127,14 +176,13 @@ export default function Home() {
             <div className="mb-6 mt-4 flex justify-center relative">
               <Logo size="hero" className="mx-auto" />
               
-              {/* Animated Grapplers - slides in to exact position from "Jiu Jitsu (5)" logo - Hidden on mobile */}
+              {/* Animated Grapplers - slides in to exact position from "Jiu Jitsu (5)" logo */}
               <motion.div
                 initial={{ x: 200, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 1.5, delay: 2.0, type: "spring", stiffness: 80 }}
-                className="absolute transform hidden md:block"
+                className="absolute transform right-[25%] md:right-[32%]"
                 style={{ 
-                  right: '32%', // Position to the right of the "t" in "Quest" (not on top)
                   top: '52%', // Moved down 2% to align with bottom of logo text
                   transform: 'translateY(-50%)'
                 }}
